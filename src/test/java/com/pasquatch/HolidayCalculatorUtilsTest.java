@@ -3,6 +3,7 @@ package com.pasquatch;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.Month;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -31,5 +32,11 @@ class HolidayCalculatorUtilsTest {
     @Test
     public void canGetChristmasDayObserved() {
         assertEquals(LocalDate.of(2021, 12, 24), HolidayCalculatorUtils.christmas(2021));
+    }
+
+    @Test
+    public void canGetBastilleDay() {
+        assertEquals(LocalDate.of(2024, 7, 15),
+                HolidayCalculatorUtils.getObservedHolidayFunctionForYearAndDate(2024, Month.JULY, 14));
     }
 }
